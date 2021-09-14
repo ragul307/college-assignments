@@ -5,3 +5,4 @@ Repo containing solutions to all college assignments
 ### Analysis and Design Strategies of Algorithms
 
 - [ ] Maximum Subarray Sum - Assigned on 13/09/2021
+- [ ] Test List
