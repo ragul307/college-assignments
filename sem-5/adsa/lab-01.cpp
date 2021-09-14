@@ -68,6 +68,6 @@ int main()
     int n = sizeof(arr) / sizeof(arr[0]);
     int max_sum = maxSubArraySum(arr, 0, n - 1);
     printf("Maximum contiguous sum is %d\n", max_sum);
-    getchar();
+    
     return 0;
 }
