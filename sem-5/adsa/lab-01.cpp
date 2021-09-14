@@ -3,7 +3,7 @@
 
 /*---------------------------
 
-This is C code, change it C++
+This is C code, change it to C++
 
 ---------------------------*/
 
