@@ -58,3 +58,6 @@ _deps
 # MISC
 **.bat
 **.sh
+
+# Temp Folders
+temp/
