@@ -9,7 +9,7 @@ AlignOperands: 'true'
 AlignTrailingComments: 'true'
 AllowAllArgumentsOnNextLine: 'true'
 AllowAllConstructorInitializersOnNextLine: 'true'
-AllowAllParametersOfDeclarationOnNextLine: 'true'
+AllowAllParametersOfDeclarationOnNextLine: 'false'
 AllowShortBlocksOnASingleLine: 'false'
 AllowShortCaseLabelsOnASingleLine: 'true'
 AllowShortFunctionsOnASingleLine: Empty
@@ -70,8 +70,9 @@ SpacesInParentheses: 'false'
 SpacesInSquareBrackets: 'false'
 Standard: Auto
 TabWidth: '4'
+UseTab: ForContinuationAndIndentation
+
 # EmptyLineAfterAccessModifierStyle: 'Never'
 # EmptyLineBeforeAccessModifierStyle: 'LogicalBlock'
-UseTab: ForContinuationAndIndentation
 
 ...
