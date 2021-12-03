@@ -10,46 +10,47 @@ class item
             
 };
 
- int greedymax(item object[], int n, int maxwt, item sobject[]) 
- {
-     int i{}, j{}, m{};
-     item temp;
+int greedymax(item object[], int n, int maxwt, item sobject[]) 
+{
+    int i{}, j{}, m{};
+    item temp;
      
-     for(; i < n; i++) {
-         object[i].pw = object[i].profit / object[i].weight;
-     }
-     for(i = 0;i < n-1; i++) {
-         for(j = i + 1;j < n; j++) {
-             if(object[j].pw > object[i].pw) {
-                 temp = object[i];
-                 object[i] = object[j];
-                 object[j] = temp;
-             }
-         }
-     }
+    for(; i < n; i++) {
+        object[i].pw = object[i].profit / object[i].weight;
+    }
+    for(i = 0;i < n-1; i++) {
+        for(j = i + 1;j < n; j++) {
+            if(object[j].pw > object[i].pw) {
+                temp = object[i];
+                object[i] = object[j];
+                object[j] = temp;
+            }
+        }
+    }
      
-     for(i = 0; i < n; i++)
-     {
-         if (maxwt == 0) {
-            return i; 
-         }
+    for(i = 0; i < n; i++)
+    {
+        if (maxwt == 0) {
+           return i; 
+        }
          
-         if(object[i].weight <= maxwt) {
-            sobject[i] = object[i];
+        if(object[i].weight <= maxwt) {
+           sobject[i] = object[i];
+           maxwt -= object[i].weight;
+        }
+        else 
+        {
+            temp = object[i];
+            temp.weight = maxwt;   
+            temp.profit = object[i].profit * maxwt/object[i].weight;
             maxwt -= object[i].weight;
-         }
-         else {
-             temp = object[i];
-             temp.weight = maxwt;   
-             temp.profit = object[i].profit * maxwt/object[i].weight;
-             maxwt -= object[i].weight;
-             sobject[i] = temp;
-             maxwt -= temp.weight;
-         }
-     }
+            sobject[i] = temp;
+            maxwt -= temp.weight;
+        }
+    }
      
      
- }
+}
 
 int main() 
 {

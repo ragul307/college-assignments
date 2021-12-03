@@ -17,7 +17,7 @@ int jobsequence(job detail[], int n, int slot[])
     {
         if(maxtime < detail[i].deadline)
         {
-             maxtime = detail[i].deadline;
+            maxtime = detail[i].deadline;
         }
     }
  

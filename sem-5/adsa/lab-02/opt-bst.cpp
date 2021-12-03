@@ -3,38 +3,38 @@
 #include <numeric>
 #include <limits>
 
-void Solve()
+void optbst()
 {
-	long              sz {};
-	std::vector<long> keys {};
+	long   size {};
+	std::vector<long> key {};
 	std::vector<long> frequency {};
 
-	std::cin >> sz;
+	std::cin >> size;
 	long temp {};
 
-	for (long i = 0; i < sz; ++i) {
+	for (long i = 0; i < size; ++i) {
 		std::cin >> temp;
-		keys.push_back(temp);
+		key.push_back(temp);
 	}
 
-	for (long i = 0; i < sz; ++i) {
+	for (long i = 0; i < size; ++i) {
 		std::cin >> temp;
 		frequency.push_back(temp);
 	}
 
 	std::vector<std::vector<long>> cost {};
-	cost.resize(sz);
+	cost.resize(size);
 
 	for (auto& element : cost) {
-		element.resize(sz);
+		element.resize(size);
 	}
 
-	for (long i = 0; i < sz; ++i) {
+	for (long i = 0; i < size; ++i) {
 		cost[i][i] = frequency[i];
 	}
 
-	for (long aux = 2; aux <= sz; ++aux) {
-		auto temp = sz - aux + 1;
+	for (long aux = 2; aux <= size; ++aux) {
+		auto temp = size - aux + 1;
 
 		for (long i = 0; i <= temp; ++i) {
 			auto j     = i + aux - 1;
@@ -46,7 +46,7 @@ void Solve()
 				if (k > i) {
 					c += cost[i][k - 1];
 				}
-				if (k < j && k + 1 < sz) {
+				if (k < j && k + 1 < size) {
 					c += cost[k + 1][j];
 				}
 
@@ -61,12 +61,12 @@ void Solve()
 		}
 	}
 
-	std::cout << cost[0][sz - 1];
+	std::cout << cost[0][size - 1];
 }
 
 int main()
 {
-	Solve();
+	optbst();
 
 	return EXIT_SUCCESS;
 }
